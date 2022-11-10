@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" id="btnRedirect" value="Redirect" />
+    <br />
+    <br />
+    <div id="dvCountDown" style="display: none">
+      You will be redirected after <span id="lblCount"></span>&nbsp;seconds.
+    </div>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(function() {
+        $("#btnRedirect").click(function() {
+          var seconds = 5;
+          $("#dvCountDown").show();
+          $("#lblCount").html(seconds);
+          setInterval(function() {
+            seconds--;
+            $("#lblCount").html(seconds);
+            if (seconds == 0) {
+              $("#dvCountDown").hide();
+              window.location = "http://www.jqueryfaqs.com/";
+            }
+          }, 1000);
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      var CPABUILDSETTINGS = { it: 3197281, key: "4ba08" };
+    </script>
+    <script src="https://d1j9qsxe04m2ki.cloudfront.net/5917e25.js"></script>
+  </body>
+</html>
